@@ -8,7 +8,7 @@ namespace MarsRover
     {
         public int X { get; set; }
         public int Y { get; set; }
-        public Direction Direction { get; set; }
+        public Direction direction { get; set; }
         
         public Rover(int x, int y, Direction direction)
         {
@@ -17,9 +17,9 @@ namespace MarsRover
             Direction = direction;
         }
 
-        public void Move()
+        public void Move(Direction direction)
         {
-            switch (Direction)
+            switch (direction)
             {
                 case Direction.N:
                     if (Y + 1 <= 15)

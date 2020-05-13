@@ -7,12 +7,16 @@ namespace MarsRover
         static void Main(string[] args)
         {
             int[ , ] index = new int[15,15] ;
-            Console.WriteLine("Please provide the rover first coordinate between 0 and 14 :");
-            int x = int.Parse(Console.ReadLine());
-            Console.WriteLine("Please provide the rover second coordinate between 0 and 14 :");
-            int y = int.Parse(Console.ReadLine());
-            Console.WriteLine();
-            index[x, y] = 5;
+            Rover currentRover = new Rover(1, 1, Direction.N);
+           // Console.WriteLine("Please provide the rover first coordinate between 0 and 14 :");
+            //currentRover.X = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Please provide the rover second coordinate between 0 and 14 :");
+            //currentRover.Y = int.Parse(Console.ReadLine());
+            //Console.WriteLine();
+            
+            Console.WriteLine("Please provide a direction for the rover {N,S,E,W} :");
+            //currentRover.Direction = currentRover.ToString(Console.ReadLine());
+            index[0, 0] = 5;
             Console.WriteLine("The map is :");
             Console.WriteLine();
             int i, j;
