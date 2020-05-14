@@ -10,14 +10,14 @@ namespace MarsRover
         public int Y { get; set; }
         public Direction direction { get; set; }
         
-        public Rover(int x, int y, Direction direction)
+        public Rover(int x, int y, Direction direction1)
         {
             X = x;
             Y = y;
-            Direction = direction;
+            direction = direction1;
         }
 
-        public void Move(Direction direction)
+        public void ChangeOrientation(Direction direction)
         {
             switch (direction)
             {
@@ -41,6 +41,9 @@ namespace MarsRover
             }
         }
 
-        
+        public override string ToString()
+        {
+            return $" {X} {Y} {direction}";
+        }
     }
 }
