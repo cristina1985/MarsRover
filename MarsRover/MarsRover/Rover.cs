@@ -22,20 +22,20 @@ namespace MarsRover
             switch (direction)
             {
                 case Direction.N:
+                    if (X - 1 >= 0)
+                        X -= 1;
+                    break;
+                case Direction.E:
                     if (Y + 1 <= 15)
                         Y += 1;
                     break;
-                case Direction.E:
-                    if (X + 1 <= 15)
+                case Direction.S:
+                    if (X + 1 <=15)
                         X += 1;
                     break;
-                case Direction.S:
+                case Direction.W:
                     if (Y - 1 >= 0)
                         Y -= 1;
-                    break;
-                case Direction.W:
-                    if (X - 1 >= 0)
-                        X -= 1;
                     break;
                 default: throw new ArgumentOutOfRangeException();
             }
