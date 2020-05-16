@@ -4,15 +4,22 @@ using System.Text;
 
 namespace MarsRover
 {
-    class Map : Rover
+    public class Map 
     {
         public int[,] index = new int[15, 15];
-        public Map(int x, int y, Direction direction1)
+        public Map(int k, int l, Direction direction)
         {
-            X = x;
-            Y = y;
-            direction1 = direction;
-            index[x, y] = direction;
+            /* if (direction  == Direction.E)
+             {
+               index[k, l] = Char.ConvertFromUtf32(0x2192);
+
+             }  */
+            index[k,l]=5;
+           // string s = Convert.ToString(index[k, l]);
+            //index[k,l]= index[k,l] + Char.ConvertFromUtf32(0x2192);
+            //index[k, l] = Char.ConvertFromUtf32(0x2192);
+    
+            //Console.WriteLine($"Value s is {s}");
             Console.WriteLine("The map is :");
             Console.WriteLine();
             int i, j;
@@ -26,7 +33,7 @@ namespace MarsRover
                 }
                 Console.Write(Environment.NewLine + Environment.NewLine);
             }
-        }
+        } 
 
     }
 

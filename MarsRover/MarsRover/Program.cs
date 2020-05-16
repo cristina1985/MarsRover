@@ -34,7 +34,7 @@ namespace MarsRover
             currentRover.direction = Enum.Parse<Direction>(Console.ReadLine());
             currentRover.ChangeOrientation(currentRover.direction);
             //Console.WriteLine($"{currentRover.direction}");
-            Console.WriteLine($"{currentRover.X} and {currentRover.Y}");
+            Console.WriteLine($"The new rover position is {currentRover.X} and {currentRover.Y}");
             Console.ReadLine();
             Map map2 = new Map(currentRover.X, currentRover.Y,currentRover.direction);
 

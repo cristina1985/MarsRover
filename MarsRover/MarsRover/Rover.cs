@@ -41,9 +41,9 @@ namespace MarsRover
             }
         }
 
-        public override string ToString()
+      /*  public override string ToString()
         {
             return $" {X} {Y} {direction}";
-        }
+        } */
     }
 }
