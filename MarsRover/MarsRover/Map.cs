@@ -24,18 +24,18 @@ namespace MarsRover
                     {
                         switch (direction)
                         {
-                            case Direction.E:
-                                index[i, j] = Char.ConvertFromUtf32(0x2192);
+                            case Direction.East:
+                                index[i, j] = "E";
                                 break;
 
-                            case Direction.N:
-                                index[i, j] = Char.ConvertFromUtf32(0x2191);
+                            case Direction.North:
+                                index[i, j] = "N";
                                 break;
-                            case Direction.S:
-                                index[i, j] = Char.ConvertFromUtf32(0x2193);
+                            case Direction.South:
+                                index[i, j] = "S";
                                 break;
-                            case Direction.W:
-                                index[i, j] = Char.ConvertFromUtf32(0x2190);
+                            case Direction.West:
+                                index[i, j] = "W";
                                 break;
                             default: throw new ArgumentOutOfRangeException();
                         }
@@ -44,7 +44,10 @@ namespace MarsRover
                     Console.Write(index[i, j] + " ");
 
                 }
-                Console.Write(Environment.NewLine + Environment.NewLine);
+                
+                
+                Console.WriteLine();
+
             }
         } 
 
