@@ -7,7 +7,11 @@ namespace MarsRover
     public class Map 
     {
         public string[,] index = new string[15, 15];
-        public Map(int k, int l, Direction direction)
+        public Map()
+        {
+        }
+        
+        public void PrintMap(int k, int l, Direction direction)
         {
             Console.WriteLine("The map is :");
             Console.WriteLine();
@@ -44,13 +48,9 @@ namespace MarsRover
                     Console.Write(index[i, j] + " ");
 
                 }
-                
-                
                 Console.WriteLine();
-
             }
-        } 
+        }
 
     }
-
 }
