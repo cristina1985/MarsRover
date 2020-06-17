@@ -15,6 +15,7 @@ namespace MarsRover
         private Map _map = new Map();
         private Rover _rover;
         public string[,] index = new string[15, 15];
+        
 
         public Orchastrator()
         {
@@ -30,6 +31,7 @@ namespace MarsRover
             }
                 
             var abstractCommand = GetCommand();
+          
             if (abstractCommand is MoveCommand)
             {
                 var command = abstractCommand as MoveCommand;
@@ -37,12 +39,22 @@ namespace MarsRover
                 _y = command.Y;
                 Console.Clear();
                 _map.PrintMap(_x, _y, _direction);
+                _runs += 1;
             }
+            else 
+            if (abstractCommand is ChangeOrientationCommand)
+                {
+                    var command = abstractCommand as ChangeOrientationCommand;
+                    _direction = command.Direction;                  
+                    Console.Clear();
+                    _map.PrintMap(_x, _y, _direction);
+                    _runs += 1;
+                }
 
 
-            _runs += 1;
-            return ContinuationType.Continue;
-        }
+                // _runs += 1;
+                return ContinuationType.Continue;
+            }
         private void GetInitialInfo()
         {
             Console.WriteLine("Please provide the rover coordinates separated by space \n [ the values shoud be between 0 and 14 ] :");
@@ -72,7 +84,9 @@ namespace MarsRover
                     case "--move":
                         string[] coords = nextArg.Split(',');
                         return new MoveCommand(int.Parse(coords[0]), int.Parse(coords[1]));
-
+                        
+               
+                
                     case "-co":
                     case "--changeOrientation":
                         switch (nextArg)

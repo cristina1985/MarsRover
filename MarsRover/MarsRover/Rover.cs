@@ -8,11 +8,11 @@ namespace MarsRover
     {
         
 
-        public Rover(int x, int y, Direction direction1)
+        public Rover(int x, int y, Direction direction)
         {
             X = x;
             Y = y;
-            direction = direction1;
+            Direction = direction;
         }
 
         public int X { get; set; }
@@ -21,7 +21,7 @@ namespace MarsRover
         public int nextX { get; set; }
         public int nextY { get; set; }
 
-        public Direction direction { get; set; }
+        public Direction Direction { get; set; }
 
         //public bool Move(x, y)
         //public bool Rotate(orientation)
