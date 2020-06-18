@@ -11,6 +11,9 @@ namespace MarsRover
         private int _runs = 0;
         private int _x = 0;
         private int _y = 0;
+        private int move_x = 0;
+        private int move_y = 0;
+
         private Direction _direction = Direction.North;
         private Map _map = new Map();
         private Rover _rover;
@@ -35,11 +38,59 @@ namespace MarsRover
             if (abstractCommand is MoveCommand)
             {
                 var command = abstractCommand as MoveCommand;
-                _x = command.X;
-                _y = command.Y;
-                Console.Clear();
-                _map.PrintMap(_x, _y, _direction);
+                /* _x = command.X;
+                 _y = command.Y;
+                 if (_rover.Move(_x,_y) == true)
+                 {
+                     Console.Clear();
+                     _map.PrintMap(_x,_y, _direction);
+                 } */
+
+                move_x = command.X;
+                move_y = command.Y;
+                switch (_direction)
+                {
+                    case Direction.North:
+                        if ((move_x >= 0) && (move_x == _x - 1))
+                        {
+                            Console.Clear();
+                            _map.PrintMap(move_x, move_y, _direction);
+                        }
+                        else Console.WriteLine("The rover can't move to this direction");
+                        break;
+
+                    case Direction.East:
+                        if ((move_y <= 14) && (move_y == _y + 1))
+                        {
+                            Console.Clear();
+                            _map.PrintMap(move_x, move_y, _direction);
+                        }
+                        else Console.WriteLine("The rover can't move to this direction");
+                        break;
+
+                    case Direction.West:
+                        if ((move_y >= 0) && (move_y == _y - 1))
+                        {
+                            Console.Clear();
+                            _map.PrintMap(move_x, move_y, _direction);
+                        }
+                        else Console.WriteLine("The rover can't move to this direction");
+                        break;
+
+                    case Direction.South:
+                        if ((move_x <=14 ) && (move_x == _x + 1))
+                        {
+                            Console.Clear();
+                            _map.PrintMap(move_x, move_y, _direction);
+                        }
+                        else Console.WriteLine("The rover can't move to this direction");
+                        break;
+
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
                 _runs += 1;
+                
             }
             else 
             if (abstractCommand is ChangeOrientationCommand)

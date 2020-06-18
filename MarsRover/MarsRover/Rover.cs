@@ -23,7 +23,39 @@ namespace MarsRover
 
         public Direction Direction { get; set; }
 
-        //public bool Move(x, y)
+      /*  public bool Move(int nextX, int nextY)
+        {
+            switch (Direction)
+            {
+                case Direction.North:
+                    if ((nextX >= 0)  && (nextX == (X - 1)))                                             
+                        return true;                    
+                    else Console.WriteLine("The rover can't move to this direction");
+                    break;
+                case Direction.East:
+                    if ((nextY <=14) && (nextY == (Y + 1)))
+                        return true;
+                    else Console.WriteLine("The rover can't move to this direction");
+                    break;
+                case Direction.South:
+                    if ((nextX <=14) && (nextX == (X + 1)))
+                        return true;
+                    else Console.WriteLine("The rover can't move to this direction");
+                    break;
+                case Direction.West:
+                    if ((nextY>=0) && (nextY ==  (Y - 1)))
+                        return true;
+                    else Console.WriteLine("The rover can't move to this direction");
+                    break;
+                default: return false;
+
+               // default: throw new ArgumentOutOfRangeException();
+            }
+            return false;
+        }
+
+
+    */
         //public bool Rotate(orientation)
 
     }
